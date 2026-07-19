@@ -1,0 +1,6 @@
+GENEVIEVE LISTENS™ STANDALONE DEMO V2 — STORY & HANDOVER
+
+Open index.html in a modern browser, or serve the folder locally.
+This is a separate demonstration and does not modify Irene’s existing practice build.
+Use My story & handover to capture a moment, build an event record, generate an editable draft and save a person-approved version.
+No data is sent automatically.

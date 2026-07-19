@@ -1,0 +1,18 @@
+GENEVIEVE LISTENS™ V2 — HANDOVER FEATURE TEST REPORT
+
+PASSED:
+- JavaScript syntax validation.
+- Required file and content checks.
+- Unique HTML ID check.
+- JavaScript-to-HTML element reference check.
+- Runtime smoke test using a controlled DOM/local-storage harness.
+- Quick capture saves time, intensity, self-reported safety and dissociation marker.
+- Structured event record saves incomplete-recall status.
+- Clinician handover draft includes memory reliability, unknown information and consent/source sections.
+- Approval gate requires factual review, privacy review, specific sharing choice and named recipient.
+- Approved version records that it was not sent automatically.
+- Static server returned the application files successfully.
+- Irene V8 reference archive SHA-256 remained unchanged.
+
+LIMITATION:
+- The available headless Chromium environment blocks local and file URLs by administrator policy, so a new V2 screenshot/browser automation pass could not be completed here. This is an environment restriction, not evidence of a browser failure. V1 browser rendering tests remain documented separately in V1.

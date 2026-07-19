@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171217">
+  <meta name="description" content="Standalone GENEVIEVE LISTENS™ compassionate-support and closed-loop referral and person-controlled handover demonstration for clinical review.">
+  <title>GENEVIEVE LISTENS™ — Standalone Handover Review Demo</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript><div class="noscript">This demonstration needs JavaScript enabled.</div></noscript>
+  <div class="demo-banner" id="demoBanner">
+    <strong>Standalone clinical-design demonstration</strong>
+    <span>No live AI, clinician monitoring or emergency dispatch is connected. Data stays in this browser unless exported.</span>
+    <button type="button" id="dismissBanner">Dismiss</button>
+  </div>
+
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-marks">
+          <img src="assets/genevieve-ga-logo-approved-original.png" alt="GENEVIEVE App approved GA emblem">
+          <img src="assets/genevieve-tree-logo-approved-original.jpeg" alt="GENEVIEVE App approved tree and roots emblem">
+        </div>
+        <div>
+          <div class="brand-name">GENEVIEVE LISTENS™</div>
+          <div class="brand-subtitle">Compassion • connection • accountable follow-up</div>
+        </div>
+      </div>
+
+      <div class="identity-card">
+        <span class="identity-dot" aria-hidden="true"></span>
+        <div>
+          <strong id="identityName">Welcome</strong>
+          <small id="identitySupport">Your choices remain visible</small>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Program sections">
+        <button class="nav-btn active" data-page="home"><span>⌂</span>Home</button>
+        <button class="nav-btn" data-page="talk"><span>✦</span>Talk to me</button>
+        <button class="nav-btn" data-page="stay"><span>♡</span>Stay with me</button>
+        <button class="nav-btn" data-page="memory"><span>◉</span>Know me</button>
+        <button class="nav-btn" data-page="safety"><span>◇</span>My safety preferences</button>
+        <button class="nav-btn" data-page="handover"><span>≋</span>My story & handover</button>
+        <button class="nav-btn" data-page="referrals"><span>↻</span>No Lost Referral</button>
+        <button class="nav-btn" data-page="irene"><span>✓</span>Irene review room</button>
+      </nav>
+
+      <div class="sidebar-actions">
+        <button class="red-entry" data-page="redmode">
+          <span>!</span>
+          <div><strong>I might not be safe</strong><small>Listen first, then choose the next step</small></div>
+        </button>
+        <button class="secondary-entry" id="exportAll"><span>⇩</span>Export my demo data</button>
+        <button class="secondary-entry" id="resetDemo"><span>↺</span>Reset demonstration</button>
+      </div>
+
+      <p class="sidebar-note">This prototype supports discussion and workflow testing. It does not diagnose, treat, monitor or replace qualified care.</p>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+        <div class="top-title">
+          <h1 id="pageTitle">Welcome</h1>
+          <p id="pageSubtitle">A separate program for compassionate listening and closed-loop support.</p>
+        </div>
+        <div class="mode-switch" role="group" aria-label="View mode">
+          <button class="mode-btn active" data-mode="person">Person</button>
+          <button class="mode-btn" data-mode="reviewer">Reviewer</button>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="page active" id="page-home" data-title="Welcome" data-subtitle="A separate program for compassionate listening and closed-loop support.">
+          <section class="hero">
+            <div>
+              <span class="kicker">LISTEN BEFORE ESCALATION</span>
+              <h2>You deserve to be heard before you are managed.</h2>
+              <p>This demonstration gives a person several ways to ask for connection, comfort, practical help or urgent safety support—without making them repeat their story or surrender their preferences.</p>
+              <div class="hero-actions">
+                <button class="primary" data-page="talk">Talk to me</button>
+                <button class="soft" data-page="stay">Stay with me</button>
+                <button class="outline" data-page="redmode">I might not be safe</button>
+              </div>
+            </div>
+            <div class="principle-card">
+              <strong>Non-negotiable design rules</strong>
+              <ul>
+                <li>Reflect what was heard before giving instructions.</li>
+                <li>Explain every proposed action.</li>
+                <li>Keep pets and dependants in the safety plan.</li>
+                <li>Never call a referral complete until responsibility is accepted.</li>
+                <li>Never pretend an AI is human or secretly monitoring.</li>
+              </ul>
+            </div>
+          </section>
+
+          <h3 class="section-heading">What do you need right now?</h3>
+          <div class="need-grid">
+            <button class="need-card" data-intent="listen" data-page="talk"><span>01</span><h4>Listen to me</h4><p>No fixing unless I ask. Reflect my words and let me finish.</p></button>
+            <button class="need-card" data-intent="company" data-page="stay"><span>02</span><h4>Stay with me</h4><p>Gentle company, one check-in at a time, with no pressure to perform.</p></button>
+            <button class="need-card" data-intent="celebrate" data-page="talk"><span>03</span><h4>Celebrate with me</h4><p>Share an idea, discovery or achievement with someone who remembers why it matters.</p></button>
+            <button class="need-card" data-intent="practical" data-page="talk"><span>04</span><h4>Help me solve one thing</h4><p>Turn one overwhelming problem into the smallest useful next action.</p></button>
+            <button class="need-card" data-intent="worth" data-page="memory"><span>05</span><h4>Help me feel worthy</h4><p>Use my own values, history and strengths—not empty compliments.</p></button>
+            <button class="need-card" data-page="handover"><span>06</span><h4>Help me explain it later</h4><p>Capture the moment, memory gaps and outcomes, then create a summary I approve.</p></button>
+            <button class="need-card danger" data-page="redmode"><span>!</span><h4>I might act</h4><p>Clear safety questions, compassionate language and person-held preferences.</p></button>
+          </div>
+
+          <section class="pet-rule">
+            <div class="pet-icon">🐾</div>
+            <div><strong>Pets are not an afterthought.</strong><p>A person can identify an animal as family, responsibility, reason for living and a non-negotiable accommodation requirement.</p></div>
+            <button class="outline small" data-page="safety">Set pet requirement</button>
+          </section>
+        </div>
+
+        <div class="page" id="page-talk" data-title="Talk to me" data-subtitle="Choose whether you need listening, celebration, comfort or practical help.">
+          <div class="two-col">
+            <section class="panel chat-panel">
+              <div class="panel-head"><div><span class="kicker">COMPANION DEMONSTRATION</span><h2 id="chatHeading">I’m listening.</h2></div><span class="privacy-chip">Local demo only</span></div>
+              <div class="intent-bar" id="intentBar">
+                <button class="intent active" data-intent="listen">Just listen</button>
+                <button class="intent" data-intent="company">Keep me company</button>
+                <button class="intent" data-intent="celebrate">Celebrate with me</button>
+                <button class="intent" data-intent="practical">Help with one thing</button>
+              </div>
+              <div class="chat-log" id="chatLog" aria-live="polite"></div>
+              <form class="chat-form" id="chatForm">
+                <label for="chatInput">Say it in your own words. Swearing, repetition and unfinished sentences are allowed.</label>
+                <textarea id="chatInput" rows="4" placeholder="Type what is happening or what you want to share..."></textarea>
+                <div class="chat-actions">
+                  <button class="soft" type="button" id="voiceInput">🎙 Speak</button>
+                  <button class="soft" type="button" id="comfortPulse">♡ Gentle phone pulse</button>
+                  <button class="soft" type="button" id="captureChat">Add recent chat to my story</button>
+                  <button class="primary" type="submit">Send</button>
+                </div>
+              </form>
+            </section>
+
+            <aside class="panel response-controls">
+              <span class="kicker">YOU CONTROL THE RESPONSE</span>
+              <h3>What should the companion do?</h3>
+              <label class="toggle-row"><input type="checkbox" id="reflectFirst" checked><span><strong>Reflect first</strong><small>Show what it heard before suggestions.</small></span></label>
+              <label class="toggle-row"><input type="checkbox" id="noAdvice"><span><strong>No advice yet</strong><small>Remain present without trying to solve it.</small></span></label>
+              <label class="toggle-row"><input type="checkbox" id="shortReplies" checked><span><strong>Short replies</strong><small>Reduce overload when distressed.</small></span></label>
+              <label class="toggle-row"><input type="checkbox" id="rememberChat"><span><strong>Offer to remember</strong><small>Ask permission before saving anything.</small></span></label>
+              <div class="boundary-note"><strong>Honesty boundary</strong><p>The companion must say it is software. It must not claim to love, feel, watch, wait, worry or replace a human relationship.</p></div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="page" id="page-stay" data-title="Stay with me" data-subtitle="Low-pressure company and repeated check-ins without forcing conversation.">
+          <section class="panel stay-panel">
+            <div class="panel-head"><div><span class="kicker">QUIET COMPANY MODE</span><h2>We can take this one small interval at a time.</h2></div><span class="status-pill" id="stayStatus">Not started</span></div>
+            <p class="lead">Choose an interval. The demonstration will keep the screen active, prompt gently and record whether the last check-in was answered. It does not contact anyone automatically.</p>
+            <div class="stay-controls">
+              <label>Check-in interval
+                <select id="stayInterval">
+                  <option value="60">1 minute — demonstration</option>
+                  <option value="300">5 minutes</option>
+                  <option value="600">10 minutes</option>
+                </select>
+              </label>
+              <button class="primary" id="startStay">Start staying with me</button>
+              <button class="outline" id="stopStay">Stop</button>
+            </div>
+            <div class="stay-clock" id="stayClock">00:00</div>
+            <div class="checkin-card" id="checkinCard">
+              <strong>How is this moment?</strong>
+              <div class="checkin-actions">
+                <button data-checkin="safe">I’m safe right now</button>
+                <button data-checkin="hard">Still hard—stay with me</button>
+                <button data-checkin="unsafe">My safety changed</button>
+              </div>
+            </div>
+            <div class="timeline" id="stayTimeline"></div>
+          </section>
+        </div>
+
+        <div class="page" id="page-memory" data-title="Know me" data-subtitle="Person-controlled memory: save, edit, export or delete every item.">
+          <div class="two-col">
+            <section class="panel">
+              <div class="panel-head"><div><span class="kicker">PERSON-CONTROLLED MEMORY</span><h2>What should the companion know?</h2></div><span class="privacy-chip">Nothing saved without Save</span></div>
+              <form class="form-grid" id="memoryForm">
+                <label>Name<input id="memName" autocomplete="name" placeholder="How should I address you?"></label>
+                <label>Pronouns<input id="memPronouns" placeholder="e.g. she/her"></label>
+                <label class="wide">People, animals or responsibilities that matter<textarea id="memAnchors" rows="3" placeholder="Who or what helps you stay connected to life?"></textarea></label>
+                <label class="wide">What helps me feel heard<textarea id="memHelps" rows="3" placeholder="Examples: reflect my words, use my name, do not rush me..."></textarea></label>
+                <label class="wide">What makes things worse<textarea id="memWorse" rows="3" placeholder="Examples: repeating numbers, calling me dramatic, taking control without explanation..."></textarea></label>
+                <label class="wide">How I sound when I am excited<textarea id="memExcited" rows="3" placeholder="What should the companion notice and celebrate?"></textarea></label>
+                <label class="wide">How I sound when I am becoming unsafe<textarea id="memUnsafe" rows="3" placeholder="Words, patterns or changes that should trigger a direct safety check..."></textarea></label>
+                <div class="wide form-actions"><button class="primary" type="submit">Save my choices</button><button class="outline" type="button" id="deleteMemory">Delete memory</button></div>
+              </form>
+            </section>
+            <aside class="panel memory-preview">
+              <span class="kicker">VISIBLE MEMORY RECORD</span>
+              <h3>Nothing hidden</h3>
+              <div id="memoryPreview" class="empty-state">No memory has been saved.</div>
+              <button class="soft full" id="exportMemory">Export memory as JSON</button>
+            </aside>
+          </div>
+        </div>
+
+        <div class="page" id="page-safety" data-title="My safety preferences" data-subtitle="Document fears, boundaries, dependants and preferred help before a crisis.">
+          <div class="two-col">
+            <section class="panel">
+              <span class="kicker">MY CONTROL MATTERS</span>
+              <h2>Preferences for a safer response</h2>
+              <form class="form-grid" id="safetyForm">
+                <label class="wide">What I fear about asking for help<textarea id="safeFears" rows="3" placeholder="e.g. police, involuntary admission, not being believed, medication pressure..."></textarea></label>
+                <label class="wide">How responders should speak to me<textarea id="safeLanguage" rows="3" placeholder="What helps you remain engaged and in control?"></textarea></label>
+                <label class="wide">What must stay with me<textarea id="safeDependants" rows="3" placeholder="Pets, children, mobility aids, communication devices, medication..."></textarea></label>
+                <label>Pet or dependant name<input id="safePetName" placeholder="Name"></label>
+                <label>Relationship<input id="safePetRelationship" placeholder="e.g. family, assistance animal, reason for living"></label>
+                <label class="wide checkbox-line"><input type="checkbox" id="safeStayTogether"><span><strong>Non-negotiable: we remain together</strong><small>Accommodation and transport options must account for this requirement.</small></span></label>
+                <label class="wide">Who may be contacted with my consent<textarea id="safeContacts" rows="3" placeholder="Names, roles and contact details you choose to store"></textarea></label>
+                <label class="wide">What I consent to if I cannot answer<textarea id="safeConsent" rows="3" placeholder="Write this with a clinician or trusted advocate where possible"></textarea></label>
+                <div class="wide form-actions"><button class="primary" type="submit">Save safety preferences</button><button class="outline" type="button" id="exportSafety">Export plan</button></div>
+              </form>
+            </section>
+            <aside class="panel">
+              <span class="kicker">PET-AWARE SAFETY CARD</span>
+              <div class="pet-card" id="petCard"><div class="pet-card-icon">🐾</div><h3>No pet requirement saved</h3><p>Add the animal or dependant who must be included in every option.</p></div>
+              <div class="scope-note"><strong>Clinical review required</strong><p>Advance preferences may guide care but cannot guarantee a particular emergency response. The program must explain limits honestly.</p></div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="page" id="page-redmode" data-title="I might not be safe" data-subtitle="Direct questions, compassionate language and transparent choices.">
+          <section class="red-hero">
+            <span class="kicker light">SAFETY MODE</span>
+            <h2>You do not need to explain everything perfectly.</h2>
+            <p>Answer only what you can. This demonstration does not call anyone automatically. If there is an injury, overdose or immediate danger, urgent medical help is the safest response.</p>
+          </section>
+          <div class="red-layout">
+            <section class="panel risk-questions">
+              <h3>What is happening right now?</h3>
+              <label class="risk-row"><input type="radio" name="risk" value="injury"><span><strong>I have already taken something or injured myself</strong><small>This may require urgent medical care.</small></span></label>
+              <label class="risk-row"><input type="radio" name="risk" value="means"><span><strong>I have a method or dangerous item within reach</strong><small>The first step is creating distance while remaining connected.</small></span></label>
+              <label class="risk-row"><input type="radio" name="risk" value="thoughts"><span><strong>I am having suicidal thoughts but have not acted</strong><small>We can slow down, listen and choose the next safe step.</small></span></label>
+              <label class="risk-row"><input type="radio" name="risk" value="unsure"><span><strong>I am not sure how safe I am</strong><small>Uncertainty is enough reason to stay engaged and reduce access to danger.</small></span></label>
+              <button class="primary full" id="assessRisk">Continue</button>
+            </section>
+            <aside class="panel risk-result" id="riskResult">
+              <span class="kicker">NEXT STEP</span>
+              <h3>Choose what is true.</h3>
+              <p>The wording changes according to the selected situation and saved preferences.</p>
+            </aside>
+          </div>
+        </div>
+
+
+        <div class="page" id="page-handover" data-title="My story & handover" data-subtitle="Capture what happened while it is fresh, then create an editable summary for the person you choose.">
+          <section class="handover-hero">
+            <div>
+              <span class="kicker light">PERSON-APPROVED CONTINUITY</span>
+              <h2>Do not make me reconstruct a crisis after my mind has protected me from it.</h2>
+              <p>Record fragments, emotions, circumstances, dissociation or memory gaps as they happen. Later, the program organises them into a draft for a health professional, trusted friend or family member. Nothing is sent automatically.</p>
+            </div>
+            <div class="handover-rules">
+              <strong>The summary must distinguish:</strong>
+              <ul>
+                <li>the person’s exact words;</li>
+                <li>person-reported facts and feelings;</li>
+                <li>possible themes that still need confirmation;</li>
+                <li>unknown, unclear or dissociated periods;</li>
+                <li>the person’s approved final version.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="panel quick-capture-panel">
+            <div class="panel-head"><div><span class="kicker">QUICK CAPTURE</span><h2>I cannot explain everything right now</h2></div><span class="privacy-chip">Time-stamped locally</span></div>
+            <p class="lead">Save only the pieces you can manage. A blank or “I do not remember” answer is valid.</p>
+            <form class="quick-capture-grid" id="quickCaptureForm">
+              <label class="quick-wide">What is happening, in any words you have<textarea id="quickWhat" rows="3" placeholder="Fragments, exact words, what someone said, what happened..."></textarea></label>
+              <label>Emotion intensity <output id="quickIntensityValue">5/10</output><input id="quickIntensity" type="range" min="0" max="10" value="5"></label>
+              <label>Safety right now<select id="quickSafety"><option value="safe">Safe right now</option><option value="thoughts">Suicidal thoughts, no action</option><option value="means">Access to a method or danger</option><option value="injury">Injury or something taken</option><option value="unsure">Unsure</option></select></label>
+              <label class="checkbox-line"><input type="checkbox" id="quickDissociation"><span><strong>I may be dissociating or losing time</strong><small>Mark the record as incomplete rather than filling gaps.</small></span></label>
+              <label class="checkbox-line"><input type="checkbox" id="quickIncludeChat" checked><span><strong>Link my recent words</strong><small>Includes recent messages written by me, not hidden analysis.</small></span></label>
+              <div class="quick-wide form-actions"><button class="primary" type="submit">Save this moment</button><button class="outline" type="button" id="quickVoice">🎙 Speak instead</button></div>
+            </form>
+            <div class="capture-confirmation" id="captureConfirmation" aria-live="polite"></div>
+          </section>
+
+          <div class="handover-layout">
+            <section class="panel">
+              <div class="panel-head"><div><span class="kicker">BUILD THE STORY</span><h2>Details I want understood</h2></div><button class="soft" id="loadLatestCapture">Load latest capture</button></div>
+              <form class="form-grid" id="handoverForm">
+                <label>Event date and time<input id="hoDate" type="datetime-local"></label>
+                <label>Title or short label<input id="hoTitle" placeholder="e.g. Housing service failure and unsafe home"></label>
+                <label class="wide">Situation and circumstances<textarea id="hoSituation" rows="4" placeholder="What happened, where, who was involved and what led up to it?"></textarea></label>
+                <label class="wide">Emotions and intensity<textarea id="hoEmotions" rows="3" placeholder="Angry, terrified, abandoned, numb; include intensity if known..."></textarea></label>
+                <label class="wide">Body signs or functioning changes<textarea id="hoBody" rows="3" placeholder="Shaking, unable to eat, racing thoughts, unable to speak, pacing, shutdown..."></textarea></label>
+                <label class="wide">Thoughts, meanings or exact words I remember<textarea id="hoThoughts" rows="4" placeholder="What were you thinking or saying? Exact wording can matter."></textarea></label>
+                <label class="wide">Dissociation, lost time or memory gaps<textarea id="hoGaps" rows="3" placeholder="What is missing, blurred, uncertain or only remembered in fragments?"></textarea></label>
+                <label class="checkbox-line wide"><input type="checkbox" id="hoIncomplete"><span><strong>This account may be incomplete</strong><small>Do not let AI invent transitions or certainty.</small></span></label>
+                <label>Safety during the event<select id="hoSafety"><option value="not-recorded">Not recorded</option><option value="safe">Safe, highly distressed</option><option value="thoughts">Suicidal thoughts, no action</option><option value="means">Method or danger accessible</option><option value="injury">Injury or something taken</option><option value="unsure">Unsure</option></select></label>
+                <label>Safety now<select id="hoSafetyNow"><option value="safe">Safe right now</option><option value="thoughts">Thoughts remain</option><option value="means">Danger is accessible</option><option value="injury">Injury or something taken</option><option value="unsure">Unsure</option></select></label>
+                <label class="wide">What I tried and who I contacted<textarea id="hoActions" rows="3" placeholder="Calls, messages, services, self-help, leaving the room, staying with a pet..."></textarea></label>
+                <label class="wide">What helped, even a little<textarea id="hoHelped" rows="3"></textarea></label>
+                <label class="wide">What made it worse or caused me to disengage<textarea id="hoWorse" rows="3"></textarea></label>
+                <label class="wide">Outcome and what changed<textarea id="hoOutcome" rows="3" placeholder="What happened next? Was the problem resolved, delayed, ignored or transferred?"></textarea></label>
+                <label class="wide">What I need now from the recipient<textarea id="hoNeeds" rows="3" placeholder="Listen, assess, contact a service, document a failure, make a plan, call me back..."></textarea></label>
+                <label class="wide">Later reflection when settled<textarea id="hoLater" rows="3" placeholder="What is clearer now? What do you not want forgotten?"></textarea></label>
+                <div class="wide form-actions"><button class="primary" type="submit">Save event record</button><button class="outline" type="button" id="clearHandoverForm">Clear form</button></div>
+              </form>
+            </section>
+
+            <aside class="panel summary-builder">
+              <span class="kicker">CREATE A HANDOVER DRAFT</span>
+              <h2>Choose who it is for</h2>
+              <div class="summary-options">
+                <label>Recipient type<select id="summaryAudience"><option value="clinician">Health professional</option><option value="trusted">Trusted friend</option><option value="family">Family member</option><option value="service">Support or housing service</option></select></label>
+                <label>Length<select id="summaryLength"><option value="quick">30-second summary</option><option value="standard" selected>One-page summary</option><option value="detailed">Detailed timeline</option></select></label>
+                <label class="checkbox-line"><input type="checkbox" id="summaryUseChat" checked><span><strong>Use my recent messages</strong><small>User messages only by default.</small></span></label>
+                <label class="checkbox-line"><input type="checkbox" id="summaryUsePrefs" checked><span><strong>Include my saved preferences</strong><small>Fears, communication needs, pets and dependants.</small></span></label>
+                <label class="checkbox-line"><input type="checkbox" id="summaryQuotes" checked><span><strong>Include selected exact words</strong><small>Clearly labelled as direct quotes.</small></span></label>
+                <label class="checkbox-line"><input type="checkbox" id="summaryThemes"><span><strong>Suggest themes to confirm</strong><small>Never diagnoses; possible topics based on words used.</small></span></label>
+              </div>
+              <button class="primary full" id="generateSummary">Generate editable draft</button>
+              <div class="scope-note"><strong>Not an automatic clinical record</strong><p>The output is a person-generated draft. The recipient must verify it, and a qualified professional remains responsible for assessment and care.</p></div>
+            </aside>
+          </div>
+
+          <section class="panel summary-output-panel">
+            <div class="panel-head"><div><span class="kicker">YOUR DRAFT — EDIT BEFORE SHARING</span><h2>Nothing leaves until you approve it</h2></div><span class="status-pill" id="summaryStatus">Not generated</span></div>
+            <textarea id="summaryDraft" class="summary-draft" rows="24" placeholder="Generate a summary, then edit every word here."></textarea>
+            <div class="approval-grid">
+              <label class="checkbox-line"><input type="checkbox" id="approveFacts"><span><strong>I checked the facts</strong><small>I corrected anything inaccurate or uncertain.</small></span></label>
+              <label class="checkbox-line"><input type="checkbox" id="approvePrivacy"><span><strong>I removed what I do not want shared</strong><small>Only the minimum necessary information remains.</small></span></label>
+              <label class="checkbox-line"><input type="checkbox" id="approveShare"><span><strong>I choose to share this version</strong><small>This consent applies to this version and recipient only.</small></span></label>
+              <label>Recipient name or role<input id="summaryRecipient" placeholder="e.g. Irene, GP, support coordinator, trusted friend"></label>
+            </div>
+            <div class="form-actions"><button class="soft" id="copySummary">Copy summary</button><button class="soft" id="downloadSummary">Download text</button><button class="outline" id="printSummary">Print / save PDF</button><button class="primary" id="approveSummary">Save approved version</button></div>
+            <div class="share-warning" id="shareWarning" aria-live="polite"></div>
+          </section>
+
+          <section class="panel event-history-panel">
+            <div class="panel-head"><div><span class="kicker">CONTINUITY TIMELINE</span><h2>Saved moments, event records and approved summaries</h2></div><button class="outline" id="exportHandover">Export handover data</button></div>
+            <div id="handoverHistory" class="handover-history"></div>
+          </section>
+        </div>
+
+        <div class="page" id="page-referrals" data-title="No Lost Referral" data-subtitle="Every promise has an owner, deadline, escalation path and visible outcome.">
+          <section class="referral-hero">
+            <div><span class="kicker">CLOSED-LOOP ACCOUNTABILITY</span><h2>A referral is not complete because a number was supplied.</h2><p>It is complete only when a named receiving person accepts responsibility, the person knows what happens next, and missed commitments escalate.</p></div>
+            <button class="primary" id="newReferral">Create referral</button>
+          </section>
+          <div class="metric-grid" id="referralMetrics"></div>
+          <div class="referral-layout">
+            <section class="panel">
+              <div class="panel-head"><div><span class="kicker">ACTIVE CASES</span><h3>Referral ownership board</h3></div><button class="soft" id="simulateMissed">Simulate missed callback</button></div>
+              <div class="table-wrap"><table class="referral-table"><thead><tr><th>Case</th><th>Person need</th><th>Owner</th><th>Promise due</th><th>Status</th><th>Action</th></tr></thead><tbody id="referralBody"></tbody></table></div>
+            </section>
+            <aside class="panel case-detail" id="caseDetail"><span class="kicker">CASE DETAIL</span><h3>Select a case</h3><p>Review the owner, accepted handover, pet requirements, promised callback and escalation record.</p></aside>
+          </div>
+        </div>
+
+        <div class="page" id="page-irene" data-title="Irene review room" data-subtitle="Clinical, ethical, workflow and wording review before any live development.">
+          <section class="review-hero">
+            <div><span class="kicker light">BUILT AS A SEPARATE PROGRAM</span><h2>Review with Tracey. Keep Irene’s practice build unchanged.</h2><p>This room records what should be retained, changed, removed or clinically escalated before a production system is considered.</p></div>
+            <img src="assets/genevieve-tree-logo-approved-original.jpeg" alt="Approved GENEVIEVE tree and roots emblem">
+          </section>
+          <div class="review-grid">
+            <section class="panel">
+              <span class="kicker">REVIEW CHECKLIST</span>
+              <div id="reviewChecklist" class="review-list"></div>
+            </section>
+            <section class="panel">
+              <span class="kicker">IRENE’S NOTES</span>
+              <textarea id="ireneNotes" rows="15" placeholder="Record clinical concerns, wording changes, safeguarding requirements, governance needs and trial boundaries..."></textarea>
+              <div class="form-actions"><button class="primary" id="saveIreneNotes">Save notes locally</button><button class="outline" id="exportReview">Export review pack</button></div>
+            </section>
+          </div>
+          <section class="panel governance">
+            <span class="kicker">PRODUCTION GATES</span>
+            <div class="gate-grid">
+              <div><strong>Clinical governance</strong><p>Named clinical lead, evidence review, escalation protocols and adverse-event process.</p></div>
+              <div><strong>AI safety</strong><p>Model evaluation, hallucination controls, self-harm testing, transparent limitations and human oversight.</p></div>
+              <div><strong>Privacy</strong><p>Consent, minimum data, encryption, access controls, deletion, retention and breach response.</p></div>
+              <div><strong>Service accountability</strong><p>Real integrations, verified acceptance, auditable ownership and escalation—not simulated promises.</p></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <footer class="footer"><span>GENEVIEVE LISTENS™ standalone handover demonstration V2 • © 2026 Tracey Kennedy</span><span>Not part of Irene’s existing practice build</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="referralModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="referralModalTitle">
+      <div class="modal-head"><h2 id="referralModalTitle">Create referral</h2><button id="closeReferral" aria-label="Close">×</button></div>
+      <form id="referralForm" class="form-grid">
+        <label>Person or case label<input id="refPerson" required placeholder="Use a privacy-safe label"></label>
+        <label>Need category<select id="refNeed"><option>Housing and safety</option><option>Mental health follow-up</option><option>Clinical appointment</option><option>Social support</option><option>Other</option></select></label>
+        <label>Named owner<input id="refOwner" required placeholder="Person responsible until accepted handover"></label>
+        <label>Promised callback<input id="refDue" type="datetime-local" required></label>
+        <label class="wide">Pet, dependant or access requirements<textarea id="refRequirements" rows="2"></textarea></label>
+        <label class="wide">Receiving service and acceptance status<textarea id="refReceiver" rows="2" placeholder="Name the service and whether a person has accepted responsibility"></textarea></label>
+        <div class="wide form-actions"><button class="primary" type="submit">Create accountable referral</button><button class="outline" type="button" id="cancelReferral">Cancel</button></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

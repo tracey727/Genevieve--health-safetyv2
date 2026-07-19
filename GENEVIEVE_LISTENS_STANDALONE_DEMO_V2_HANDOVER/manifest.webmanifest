@@ -1,0 +1,24 @@
+{
+  "name": "GENEVIEVE LISTENS\u2122 \u2014 Story & Handover Demo",
+  "short_name": "LISTENS Handover",
+  "description": "Standalone person-controlled compassionate support, event capture, handover summary and closed-loop referral demonstration.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5eff2",
+  "theme_color": "#171217",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

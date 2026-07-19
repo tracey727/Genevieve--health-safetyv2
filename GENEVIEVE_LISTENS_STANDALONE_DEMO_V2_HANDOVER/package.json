@@ -1,0 +1,10 @@
+{
+  "name": "genevieve-listens-standalone-demo",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Standalone GENEVIEVE LISTENS compassionate-support, person-controlled event capture, handover summary and closed-loop referral demonstration for review by Tracey and Irene.",
+  "scripts": {
+    "serve": "python -m http.server 8080",
+    "test": "node --check app.js && node tests/structure-test.js && node tests/runtime-smoke-test.js"
+  }
+}
